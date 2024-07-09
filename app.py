@@ -12,3 +12,9 @@ def hello():
 def greet():
     name = request.form["name"]
     return f"Hello, {name}"
+
+@app.route("/order", methods = ['POST'])
+def order():
+    food = request.form["food"]
+    render_template('food.html')
+    return f"Your {food} is ready!"
