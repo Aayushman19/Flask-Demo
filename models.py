@@ -1,12 +1,25 @@
-from flask_sqlalchemy import SQLAlchemy
-from app import app
+import psycopg2
+def get_connection():
+	try:
+		return psycopg2.connect(
+			database="********",
+			user="postgres",
+			password="********",
+			host="localhost",
+			port=5432,
+		)
+	except:
+		return False
+conn = get_connection()
+if conn:
+	print("Connection to the PostgreSQL established successfully.")
+else:
+	print("Connection to the PostgreSQL encountered and error.")
 
-db = SQLAlchemy(app)
 
-class User(db.Model):
-  id = db.Column(db.Integer, primary_key=True)
-  username = db.Column(db.String(80), unique=True, nullable=False)
-  email = db.Column(db.String(120), unique=True, nullable=False)
+curr = conn.cursor()
+curr.execute("select * from user_login")
 
-def __repr__(self):
-  return f"<User {self.username}>"
+data = curr.fetchall()
+
+print(data)
