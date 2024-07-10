@@ -1,20 +1,21 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+import json
 
 app = Flask(__name__)
+food_orders = []
 
 @app.route('/')
 def hello():
-    return render_template("index.html", message = "Hello, World")
-
-@app.route("/greet", methods = ['POST'])
-def greet():
-    name = request.form["name"]
-    return f"Hello, {name}"
+    return render_template("food.html", message = "Order Now!")
 
 @app.route("/order", methods = ['POST'])
 def order():
     food = request.form["food"]
-    render_template('food.html')
+    food_orders.append(food)
     return f"Your {food} is ready!"
+
+@app.route('/bill', methods = ['GET'])
+def bill():
+    return food_orders
