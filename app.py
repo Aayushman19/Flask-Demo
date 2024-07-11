@@ -5,9 +5,9 @@ import psycopg2
 def get_connection():
 	try:
 		return psycopg2.connect(
-			database="********",
+			database="users",
 			user="postgres",
-			password="********",
+			password="Postgres@1234",
 			host="localhost",
 			port=5432,
 		)
@@ -21,13 +21,8 @@ else:
 
 app = Flask(__name__)
 food_orders = []
+amount = 0
 
 @app.route('/')
 def hello():
-    return render_template("food.html")
-
-@app.route("/bill", methods = ['POST'])
-def bill():
-    food = request.form["food"]
-    food_orders.append(food)
-    return render_template("bill.html", orders = food_orders)
+    return render_template('food.html')
