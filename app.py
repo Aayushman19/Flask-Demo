@@ -25,4 +25,7 @@ amount = 0
 
 @app.route('/')
 def hello():
-    return render_template('food.html')
+	s = input()
+	food_orders.append(s)
+	amount += 100
+    # return render_template('food.html')

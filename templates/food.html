@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Order Your Food!</h1>
-    <form>
+    <form action="" method="">
         <input type="text" name="food" id="food" placeholder="Enter your order"/>
         <button type="submit" onclick="addItem()">Place Order</button>
         <div id="billList"></div>
@@ -17,7 +17,6 @@
                 const fullBill = document.getElementById("billList");
                 const billItem = document.createElement("p");
                 billItem.innerText = document.getElementById("food");
-                
                 fullBill.appendChild(billItem);
             }
         </script>
