@@ -1,25 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orders</title>
-</head>
-<body>
-    <h1>Order Your Food!</h1>
-    <form action="/" method="GET">
-        <input type="text" name="food" id="food" placeholder="Enter your order"/>
-        <button type="submit" onclick="addItem()">Place Order</button>
-        <div id="billList"></div>
+{% extends 'base.html' %}
 
-        <script>
-            function addItem(item){
-                const fullBill = document.getElementById("billList");
-                const billItem = document.createElement("p");
-                billItem.innerText = document.getElementById("food");
-                fullBill.appendChild(billItem);
-            }
-        </script>
-    </form>
-</body>
-</html>
+{% block content %}
+<h1>{% block title %} Orders {% endblock %}</h1>
+{% for order in orders %}
+<table class="tab">
+    <tr>
+        <th>Order ID</th>
+        <th>Customer</th>
+        <th>Bill</th>
+        <th>Date</th>
+    </tr>
+    <tr>
+        <td>{{order[0]}}</td>
+        <td>{{order[1]}}</td>
+        <td>{{order[2]}}</td>
+        <td>{{order[3]}}</td>
+    </tr>
+</table>
+{% endfor %}
+{% endblock %}

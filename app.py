@@ -6,7 +6,7 @@ import psycopg2
 app = Flask(__name__)
 def get_connection():
 	try:
-		return  psycopg2.connect(
+		return psycopg2.connect(
 			database="users",
 			user="postgres",
 			password="Postgres@1234",
@@ -17,9 +17,13 @@ def get_connection():
 		return False
 
 @app.route('/')
-def hello():
+def index():
 	conn = get_connection()
-	if conn:
-		return f"Connection established Successfully"
-	else:
-		return f"Unable to Connect"
+	if not conn:
+		return f"db not connected"
+	curr = conn.cursor()
+	curr.execute('select * from restaurant_billing')
+	orders = curr.fetchall()
+	curr.close()
+	conn.close()
+	return render_template('food.html', orders = orders)
