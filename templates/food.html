@@ -11,10 +11,9 @@
         <th>Date</th>
     </tr>
     <tr>
-        <td>{{order[0]}}</td>
-        <td>{{order[1]}}</td>
-        <td>{{order[2]}}</td>
-        <td>{{order[3]}}</td>
+        {%for i in range(0, 4)%}
+        <td>{{order[i]}}</td>
+        {%endfor%}
     </tr>
 </table>
 {% endfor %}
