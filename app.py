@@ -2,9 +2,11 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import psycopg2
+
+app = Flask(__name__)
 def get_connection():
 	try:
-		return psycopg2.connect(
+		return  psycopg2.connect(
 			database="users",
 			user="postgres",
 			password="Postgres@1234",
@@ -13,19 +15,11 @@ def get_connection():
 		)
 	except:
 		return False
-conn = get_connection()
-if conn:
-	print("Connection to the PostgreSQL established successfully.")
-else:
-	print("Connection to the PostgreSQL encountered and error.")
-
-app = Flask(__name__)
-food_orders = []
-amount = 0
 
 @app.route('/')
 def hello():
-	s = input()
-	food_orders.append(s)
-	amount += 100
-    # return render_template('food.html')
+	conn = get_connection()
+	if conn:
+		return f"Connection established Successfully"
+	else:
+		return f"Unable to Connect"
