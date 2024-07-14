@@ -9,7 +9,7 @@ def get_connection():
 		return psycopg2.connect(
 			database="users",
 			user="postgres",
-			password="**********",
+			password="********",
 			host="localhost",
 			port=5432,
 		)
@@ -28,4 +28,4 @@ def index():
 	length = curr.fetchone()
 	curr.close()
 	conn.close()
-	return render_template('food.html', orders = orders)
+	return render_template('food.html', length = length, orders = orders)
