@@ -9,7 +9,7 @@ def get_connection():
 		return psycopg2.connect(
 			database="users",
 			user="postgres",
-			password="Postgres@1234",
+			password="",
 			host="localhost",
 			port=5432,
 		)
