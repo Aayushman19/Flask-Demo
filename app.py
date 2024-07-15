@@ -9,7 +9,7 @@ def get_connection():
 		return psycopg2.connect(
 			database="users",
 			user="postgres",
-			password="********",
+			password="Postgres@1234",
 			host="localhost",
 			port=5432,
 		)
@@ -24,8 +24,6 @@ def index():
 	curr = conn.cursor()
 	curr.execute('select * from restaurant_billing')
 	orders = curr.fetchall()
-	curr.execute("select count(*) from restaurant_billing")
-	length = curr.fetchone()
 	curr.close()
 	conn.close()
-	return render_template('food.html', length = length, orders = orders)
+	return render_template('food.html', orders = orders)

@@ -2,7 +2,6 @@
 
 {% block content %}
 <h1>{% block title %} Orders {% endblock %}</h1>
-{% for order in orders %}
 <table class="tab">
     <tr>
         <th>Order ID</th>
@@ -10,11 +9,13 @@
         <th>Bill</th>
         <th>Date</th>
     </tr>
-    <tr>
-        {%for i in range(0, 4)%}
-        <td>{{order[i]}}</td>
-        {%endfor%}
-    </tr>
+    {% for order in orders %}
+        <tr>
+            <td>{{order[0]}}</td>
+            <td>{{order[1]}}</td>
+            <td>{{order[2]}}</td>
+            <td>{{order[3]}}</td>
+        </tr>
+    {% endfor %}
 </table>
-{% endfor %}
 {% endblock %}
