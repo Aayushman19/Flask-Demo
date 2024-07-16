@@ -15,8 +15,12 @@ def get_connection():
 		)
 	except:
 		return False
-
+	
 @app.route('/')
+def home():
+	return render_template('home.html')
+
+@app.route('/bill')
 def index():
 	conn = get_connection()
 	if not conn:
