@@ -17,19 +17,17 @@ def get_connection():
 	except:
 		return False
 	
-url = "https://beverages-and-desserts.p.rapidapi.com/desserts/%7Bid%7D"
+url = "https://beverages-and-desserts.p.rapidapi.com/desserts"
 
 headers = {
 	"x-rapidapi-key": "70eb31faa0msh7d050807db2aaa4p1212bejsnbc5a59d3a4c6",
 	"x-rapidapi-host": "beverages-and-desserts.p.rapidapi.com"
 }
-
-response = requests.get(url, headers=headers)
-
-print(response.json())
 	
 @app.route('/')
 def home():
+	response = requests.get(url, headers=headers)
+	print(response.json())
 	return render_template('home.html')
 
 @app.route('/bill')
