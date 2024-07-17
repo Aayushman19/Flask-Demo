@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import psycopg2
+import requests
 
 app = Flask(__name__)
 def get_connection():
@@ -15,6 +16,19 @@ def get_connection():
 		)
 	except:
 		return False
+	
+url = "https://foodiefetch.p.rapidapi.com/swiggy"
+
+querystring = {"query":"grandamas cafe pune"}
+
+headers = {
+	"x-rapidapi-key": "Sign Up for Key",
+	"x-rapidapi-host": "foodiefetch.p.rapidapi.com"
+}
+
+response = requests.get(url, headers=headers , params=querystring)
+
+print(response.json())
 	
 @app.route('/')
 def home():
