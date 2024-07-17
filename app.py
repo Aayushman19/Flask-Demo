@@ -17,11 +17,11 @@ def get_connection():
 	except:
 		return False
 	
-url = "https://beverages-and-desserts.p.rapidapi.com/desserts"
+url = "https://pizza-and-desserts.p.rapidapi.com/pizzas"
 
 headers = {
 	"x-rapidapi-key": "70eb31faa0msh7d050807db2aaa4p1212bejsnbc5a59d3a4c6",
-	"x-rapidapi-host": "beverages-and-desserts.p.rapidapi.com"
+	"x-rapidapi-host": "pizza-and-desserts.p.rapidapi.com"
 }
 	
 @app.route('/')
