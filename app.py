@@ -22,11 +22,11 @@ url = "https://foodiefetch.p.rapidapi.com/swiggy"
 querystring = {"query":"grandamas cafe pune"}
 
 headers = {
-	"x-rapidapi-key": "Sign Up for Key",
+	"x-rapidapi-key": "70eb31faa0msh7d050807db2aaa4p1212bejsnbc5a59d3a4c6",
 	"x-rapidapi-host": "foodiefetch.p.rapidapi.com"
 }
 
-response = requests.get(url, headers=headers , params=querystring)
+response = requests.get(url, headers=headers, params=querystring)
 
 print(response.json())
 	
