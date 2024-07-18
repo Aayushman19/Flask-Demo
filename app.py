@@ -26,8 +26,8 @@ headers = {
 	
 @app.route('/')
 def home():
-	response = requests.get(url, headers=headers)
-	print(response.json())
+	pizza = int(input())
+	response = requests.get(url+str(pizza), headers=headers)
 	return render_template('home.html')
 
 @app.route('/bill')
