@@ -28,7 +28,7 @@ headers = {
 def home():
 	pizza = int(input())
 	response = requests.get(url+str(pizza), headers=headers)
-	return render_template('home.html')
+	return render_template('home.html', response = response)
 
 @app.route('/bill')
 def index():
