@@ -26,7 +26,7 @@ headers = {
 	
 @app.route('/')
 def home():
-	pizza = int(input())
+	pizza = request.data
 	response = requests.get(url+str(pizza), headers=headers)
 	return render_template('home.html', response = response)
 
