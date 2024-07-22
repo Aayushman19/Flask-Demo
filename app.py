@@ -24,9 +24,10 @@ headers = {
 	"x-rapidapi-host": "pizza-and-desserts.p.rapidapi.com"
 }
 	
-@app.route('/')
+@app.route('/homepage')
 def home():
-	pizza = request.data
+	pizza = request.form['dish']
+	print(pizza)
 	response = requests.get(url+str(pizza), headers=headers)
 	return render_template('home.html', response = response)
 
