@@ -27,8 +27,8 @@ headers = {
 @app.route('/homepage')
 def home():
 	pizza = request.form['dish']
-	print(pizza)
-	response = requests.get(url+str(pizza), headers=headers)
+	url = url+str(pizza)
+	response = requests.get(url, headers=headers)
 	return render_template('home.html', response = response)
 
 @app.route('/bill')
