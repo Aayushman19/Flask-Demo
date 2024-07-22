@@ -29,7 +29,8 @@ def home():
 	pizza = request.form['dish']
 	url = url+str(pizza)
 	response = requests.get(url, headers=headers)
-	return render_template('home.html', response = response)
+	print(response)
+	return render_template('base.html', response = response)
 
 @app.route('/bill')
 def index():
