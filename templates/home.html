@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Now</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
     <h1>Order Now!</h1>
     <form action="/homepage" method="POST">
-        <input type="text" placeholder="enter food" name="dish">
+        <input type="number" placeholder="enter food number" name="dish">
         {% for res in response %}
             <p>{{res}}</p>
         {% endfor %}
     </form>
-</body>
-</html>
+{% endblock %}

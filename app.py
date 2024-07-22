@@ -17,7 +17,7 @@ def get_connection():
 	except:
 		return False
 	
-url = "https://pizza-and-desserts.p.rapidapi.com/pizzas"
+url = "https://pizza-and-desserts.p.rapidapi.com/pizzas/"
 
 headers = {
 	"x-rapidapi-key": "70eb31faa0msh7d050807db2aaa4p1212bejsnbc5a59d3a4c6",
@@ -42,3 +42,6 @@ def index():
 	curr.close()
 	conn.close()
 	return render_template('food.html', orders = orders)
+
+if __name__ == '__main__':
+	app.run()
