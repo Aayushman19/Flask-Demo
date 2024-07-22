@@ -30,7 +30,7 @@ def home():
 	url = url+str(pizza)
 	response = requests.get(url, headers=headers)
 	print(response)
-	return render_template('base.html', response = response)
+	return render_template('home.html', response = response)
 
 @app.route('/bill')
 def index():
