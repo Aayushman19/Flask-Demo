@@ -1,6 +1,3 @@
-#!/usr/bin/python
-#-*- coding: utf-8 -*-
-
 class customer_order:
     def __init__(self):
         self.order_name = None
