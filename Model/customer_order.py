@@ -29,4 +29,4 @@ if __name__ == '__main__':
             obj1 = customer_order(food, price)
 
         if int(choice) == 2:
-            obj2 = total_bill(obj1,)
+            pass
