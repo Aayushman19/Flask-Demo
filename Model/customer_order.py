@@ -35,4 +35,4 @@ if __name__ == '__main__':
             amt = obj1.get_amt()
             dis = 15
             obj2 = total_bill(amt, dis)
-            print(obj2.calculate(amt, dis))
+            obj2.calculate(amt, dis)
