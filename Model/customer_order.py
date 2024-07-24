@@ -3,19 +3,22 @@ class customer_order:
     def __init__(self, food, price):
         self.order_name = food
         self.order_price = price
+    
+    def add(price):
+        amt += price
+
+    def get_amt(amt):
+        return amt
 
 class total_bill:
-    def __init__(self, amount):
-        self.discount = None
+    def __init__(self, amount, discount):
+        self.discount = discount
         self.amount = amount
 
-    def calculate(self, discount, amount):
-        dis = (discount//amount)*100
+    def calculate(discount, amount):
+        dis = (discount/amount)*100
         amount -= dis
         print("Final Bill : ", amount)
-
-
-
 
 if __name__ == '__main__':
     while True:
@@ -28,5 +31,8 @@ if __name__ == '__main__':
             price = int(input("Enter Price : "))
             obj1 = customer_order(food, price)
 
-        if int(choice) == 2:
-            obj2 = total_bill(obj1,)
+        if(int(choice) == 2):
+            amt = obj1.get_amt()
+            dis = 15
+            obj2 = total_bill(amt, dis)
+            print(obj2.calculate(amt, dis))
