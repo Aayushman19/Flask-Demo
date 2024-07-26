@@ -10,7 +10,7 @@ def get_connection():
 		return psycopg2.connect(
 			database="users",
 			user="postgres",
-			password="",
+			password="Postgres@1234",
 			host="localhost",
 			port=5432,
 		)
@@ -27,10 +27,7 @@ headers = {
 @app.route('/homepage')
 def home():
 	pizza = request.form['dish']
-	url = url+str(pizza)
-	response = requests.get(url, headers=headers)
-	print(response)
-	return render_template('home.html', response = response)
+	return render_template('home.html')
 
 @app.route('/bill')
 def index():
