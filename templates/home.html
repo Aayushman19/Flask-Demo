@@ -3,12 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Now</title>
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Order Now!</h1>
-    <form action="/homepage" method="POST">
-        <input type="number" placeholder="enter food" name="dish">
-    </form>
+    <header>
+        <h1>Gourmet Restaurant</h1>
+        <p>Delicious dishes crafted with love</p>
+    </header>
+    
+    <main>
+        <section class="menu-category">
+            <h2>Appetizers</h2>
+            <div class="menu-item">
+                <h3>Bruschetta</h3>
+                <p>Toasted bread topped with tomatoes, basil, and garlic.</p>
+                <span class="price">$8.99</span>
+            </div>
+            <div class="menu-item">
+                <h3>Stuffed Mushrooms</h3>
+                <p>Button mushrooms stuffed with cheese and herbs.</p>
+                <span class="price">$9.99</span>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2>Main Courses</h2>
+            <div class="menu-item">
+                <h3>Grilled Salmon</h3>
+                <p>Fresh salmon fillet grilled to perfection.</p>
+                <span class="price">$18.99</span>
+            </div>
+            <div class="menu-item">
+                <h3>Beef Tenderloin</h3>
+                <p>Juicy beef tenderloin cooked to your liking.</p>
+                <span class="price">$24.99</span>
+            </div>
+        </section>
+
+        <section class="menu-category">
+            <h2>Desserts</h2>
+            <div class="menu-item">
+                <h3>Tiramisu</h3>
+                <p>A classic Italian dessert with coffee and mascarpone.</p>
+                <span class="price">$7.99</span>
+            </div>
+            <div class="menu-item">
+                <h3>Cheesecake</h3>
+                <p>Rich and creamy cheesecake with a graham cracker crust.</p>
+                <span class="price">$6.99</span>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Gourmet Restaurant. All rights reserved.</p>
+    </footer>
 </body>
 </html>
